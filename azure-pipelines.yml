@@ -1,4 +1,17 @@
-steps:
-- bash: |
-    echo $(date +%Y)
-    echo $BUILDNAME
+stages:
+  - stage: build
+    displayName: build and push
+    jobs:
+      - job: docker_build
+        steps:
+        - task: DockerInstaller@0
+          inputs:
+            dockerVersion: '17.09.0-ce'
+        - task: Docker@2
+          inputs:
+            containerRegistry: 'DockerTestingImage'
+            repository: 'DockerTestingImage'
+            command: 'buildAndPush'
+            Dockerfile: '**/Dockerfile'
+            addPipelineData: false
+            addBaseImageData: false
