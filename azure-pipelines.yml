@@ -9,7 +9,7 @@ stages:
             dockerVersion: '17.09.0-ce'
         - task: Docker@2
           inputs:
-            containerRegistry: 'DockerTestingImage'
+            containerRegistry: 'docker_test'
             repository: 'DockerTestingImage'
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
