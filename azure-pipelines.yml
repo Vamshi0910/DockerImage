@@ -9,7 +9,7 @@ stages:
             dockerVersion: '17.09.0-ce'
         - task: Docker@2
           inputs:
-            containerRegistry: 'dockeracr001.azurecr.io'
+            containerRegistry: 'docker_acr'
             repository: 'DockerACR001'
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
