@@ -10,7 +10,7 @@ stages:
         - task: Docker@2
           inputs:
             containerRegistry: 'dockeracr001.azurecr.io'
-            repository: 'DockerTestingImage'
+            repository: 'DockerACR001'
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
             addPipelineData: false
